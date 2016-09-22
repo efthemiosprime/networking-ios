@@ -12,6 +12,11 @@
 		3A2D2AD51D93514400501C27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D2AD31D93514400501C27 /* Main.storyboard */; };
 		3A2D2AD71D93514400501C27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D2AD61D93514400501C27 /* Assets.xcassets */; };
 		3A2D2ADA1D93514400501C27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D2AD81D93514400501C27 /* LaunchScreen.storyboard */; };
+		3A2D2AE21D9367B600501C27 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2D2AE11D9367B600501C27 /* Card.swift */; };
+		3A2D2AE61D937E5700501C27 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D2AE51D937E5700501C27 /* Roboto-Light.ttf */; };
+		3A2D2AEA1D9380B700501C27 /* local.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D2AE91D9380B700501C27 /* local.json */; };
+		3A2D2AEC1D9384F500501C27 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D2AEB1D9384F500501C27 /* images */; };
+		3A2D2AEE1D93890000501C27 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A2D2AED1D93890000501C27 /* Roboto-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		3A2D2AD61D93514400501C27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A2D2AD91D93514400501C27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A2D2ADB1D93514400501C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A2D2AE11D9367B600501C27 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		3A2D2AE51D937E5700501C27 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		3A2D2AE91D9380B700501C27 /* local.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = local.json; sourceTree = "<group>"; };
+		3A2D2AEB1D9384F500501C27 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		3A2D2AED1D93890000501C27 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,35 @@
 		3A2D2ACE1D93514400501C27 /* nsurlsession-swift */ = {
 			isa = PBXGroup;
 			children = (
+				3A2D2AE31D937E3600501C27 /* assets */,
 				3A2D2ACF1D93514400501C27 /* AppDelegate.swift */,
 				3A2D2AD11D93514400501C27 /* ViewController.swift */,
+				3A2D2AE11D9367B600501C27 /* Card.swift */,
 				3A2D2AD31D93514400501C27 /* Main.storyboard */,
 				3A2D2AD61D93514400501C27 /* Assets.xcassets */,
 				3A2D2AD81D93514400501C27 /* LaunchScreen.storyboard */,
 				3A2D2ADB1D93514400501C27 /* Info.plist */,
 			);
 			path = "nsurlsession-swift";
+			sourceTree = "<group>";
+		};
+		3A2D2AE31D937E3600501C27 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				3A2D2AEB1D9384F500501C27 /* images */,
+				3A2D2AE91D9380B700501C27 /* local.json */,
+				3A2D2AE41D937E4400501C27 /* fonts */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		3A2D2AE41D937E4400501C27 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3A2D2AED1D93890000501C27 /* Roboto-Bold.ttf */,
+				3A2D2AE51D937E5700501C27 /* Roboto-Light.ttf */,
+			);
+			name = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +154,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A2D2AEE1D93890000501C27 /* Roboto-Bold.ttf in Resources */,
+				3A2D2AEC1D9384F500501C27 /* images in Resources */,
 				3A2D2ADA1D93514400501C27 /* LaunchScreen.storyboard in Resources */,
 				3A2D2AD71D93514400501C27 /* Assets.xcassets in Resources */,
+				3A2D2AE61D937E5700501C27 /* Roboto-Light.ttf in Resources */,
+				3A2D2AEA1D9380B700501C27 /* local.json in Resources */,
 				3A2D2AD51D93514400501C27 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2D2AD21D93514400501C27 /* ViewController.swift in Sources */,
+				3A2D2AE21D9367B600501C27 /* Card.swift in Sources */,
 				3A2D2AD01D93514400501C27 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,10 +295,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "nsurlsession-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.efthemiosprime.nsurlsession-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -271,10 +308,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "nsurlsession-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.efthemiosprime.nsurlsession-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
