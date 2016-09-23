@@ -172,6 +172,28 @@ class ViewController: UIViewController {
         
     }
     
+    // DELETE
+    // =======================================================================
+    func goDelete () -> Void {
+        let endpoint: String = "http://reqres.in/api/users/2"
+        let urlRequest = NSMutableURLRequest(URL: NSURL(string: endpoint)!)
+        urlRequest.HTTPMethod = "DELETE"
+        
+        let session = NSURLSession.sharedSession()
+        
+        let task = session.dataTaskWithRequest(urlRequest) {
+            (data, response, error) in
+            
+            guard error == nil else {
+                print("error calling DELETE")
+                return
+            }
+            
+            print("============================")
+            print("DELETE OK")
+        }
+        task.resume()
+    }
     
     @IBAction func getHandler(sender: AnyObject) {
         goGet()
@@ -181,6 +203,12 @@ class ViewController: UIViewController {
     @IBAction func postHandler(sender: AnyObject) {
         goPOST()
     }
+    
+    
+    @IBAction func deleteHandler(sender: AnyObject) {
+        goDelete()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
