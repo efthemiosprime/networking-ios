@@ -1,2 +1,2 @@
 # networking-ios
-Learning iOS Foundation Networking and using Alamofire + SwiftyJSON
+Learning iOS Networking and using Alamofire + SwiftyJSON
