@@ -30,18 +30,19 @@ class ViewController: UIViewController {
 
         self.view.backgroundColor = UIColor(red: 27/255, green: 27/255, blue: 27/255, alpha: 1.0)
         
-        simpleGet()
     }
     
-    func simpleGet() -> Void {
+    // GET 
+    // =======================================================================
+    func goGet() -> Void {
         
         let session = NSURLSession.sharedSession()
-        let newyorkWeatherURL = "http://reqres.in/api/users/1"
+        let endpoint = "http://reqres.in/api/users/1"
         
         fullNameLabel.textColor = UIColor.whiteColor()
         fullNameLabel.font = UIFont(name: "Roboto-Bold", size: 14)
         
-        guard let url = NSURL(string: newyorkWeatherURL) else {
+        guard let url = NSURL(string: endpoint) else {
             return print("Error: not a valid url")
         }
         
@@ -103,12 +104,83 @@ class ViewController: UIViewController {
         task.resume()
     }
 
+    // POST
+    // =======================================================================
+    func goPOST() -> Void {
+        
+        let endpoint: String = "http://reqres.in/api/users"
+        
+        guard let url = NSURL(string: endpoint) else {
+            print("Error: cannot create URL")
+            return
+        }
+        
+        let urlRequest = NSMutableURLRequest(URL: url)
+        urlRequest.HTTPMethod = "POST"
+        
+        let newUser = ["name": "Efthemios", "job" : "Blacksmith"]
+        let userJSON: NSData
+        do{
+            userJSON = try NSJSONSerialization.dataWithJSONObject(newUser, options: [])
+            urlRequest.HTTPBody = userJSON
+        }catch {
+            print("Error: cannot create JSON from user")
+        }
+        
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(urlRequest) {
+            (data, response, error) in
+            
+            // check error
+            guard error == nil else {
+                print("Error: POST")
+                return
+            }
+            
+            // check data
+            guard let userData = data else {
+                print("no data")
+                return
+            }
+            
+            // success
+            print("===================================")
+            print("POST SUCCESS RESONSE")
+            print(response)
+            
+            
+            do {
+                guard let userJSON = try  NSJSONSerialization.JSONObjectWithData(userData, options: []) as? NSDictionary else {
+                    print("error converting to JSON")
+                    return
+                }
+                
+                print("===================================")
+                print("POST SUCCESS DATA")
+                print(userJSON)
+                
+            }catch {
+                print("error trying to convert data to JSON")
+            }
+
+
+            
+        }
+        task.resume()
+        
+        
+    }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//    }
     
+    @IBAction func getHandler(sender: AnyObject) {
+        goGet()
+    }
+    
+    
+    @IBAction func postHandler(sender: AnyObject) {
+        goPOST()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
